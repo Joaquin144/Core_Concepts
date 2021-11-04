@@ -3,14 +3,19 @@ package com.vibhu.nitJsr.viewpager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button idBtnMotionLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        idBtnMotionLayout=findViewById(R.id.idBtnMotionLayout);
 
         int[] images = new int[8];
         images[0] = R.drawable.a1;
@@ -24,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         ViewPager viewPager = findViewById(R.id.idAct_Main_VP1);
         viewPager.setAdapter(new VPAdapter(images,MainActivity.this));
+
+        idBtnMotionLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(MainActivity.this,MotionLayoutActivity.class);
+                startActivity(intent1);
+            }
+        });
 
 
     }
