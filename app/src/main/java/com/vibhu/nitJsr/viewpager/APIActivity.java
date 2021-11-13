@@ -46,12 +46,6 @@ public class APIActivity extends AppCompatActivity {
          */
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(BASE_URL).get().addHeader(H1,HV1).addHeader(H2,HV2).build();
-//        try {
-//            Response response = client.newCall(request).execute();
-//            Log.d("####",response.body().string());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -97,16 +91,9 @@ public class APIActivity extends AppCompatActivity {
                             String name =(String) hotel.get("name");
                             Log.i("###$",name);
                             hotelList.add(new HotelsApiModel(s1,geoId,longitude,latitude,name));
-
+                            setData(hotelList);
                         }
-                        Log.d("####","size of hotel list is  = "+hotelList.size());
-                        adapter=new HotelsAPIAdapter(hotelList);
-                        LinearLayoutManager manager = new LinearLayoutManager(APIActivity.this);
-                        manager.setOrientation(RecyclerView.VERTICAL);
-                        APIRV.setLayoutManager(manager);
-                        APIRV.setAdapter(adapter);
 
-                        adapter.notifyDataSetChanged();
 
 
                     } catch (JSONException e) {
@@ -121,5 +108,22 @@ public class APIActivity extends AppCompatActivity {
         });
 
         hotelList.clear();//to avoid duplicating of elements
+    }
+    void setData(ArrayList<HotelsApiModel> hotelList){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("####","size of hotel list is  = "+hotelList.size());
+                adapter=new HotelsAPIAdapter(hotelList);
+                LinearLayoutManager manager = new LinearLayoutManager(APIActivity.this);
+                manager.setOrientation(RecyclerView.VERTICAL);
+                APIRV.setLayoutManager(manager);
+                APIRV.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+
+
     }
 }
