@@ -10,12 +10,13 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button idBtnMotionLayout;
+    private Button idBtnMotionLayout,apiBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         idBtnMotionLayout=findViewById(R.id.idBtnMotionLayout);
+        apiBtn=findViewById(R.id.hotelAPI);
 
         int[] images = new int[8];
         images[0] = R.drawable.a1;
@@ -33,8 +34,16 @@ public class MainActivity extends AppCompatActivity {
         idBtnMotionLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent(MainActivity.this,MotionLayoutActivity.class);
-                startActivity(intent1);
+                Intent intent=new Intent(MainActivity.this,MotionLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        apiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,APIActivity.class);
+                startActivity(intent);
             }
         });
 
