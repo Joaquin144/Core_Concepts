@@ -21,13 +21,13 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintEnd_toStartOf="@+id/toDoIV"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/toDoIV"
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/toDoIV"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:backgroundTint="#E91E63"
