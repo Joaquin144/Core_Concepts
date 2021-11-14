@@ -38,4 +38,15 @@
         app:layout_constraintTop_toBottomOf="@+id/idBtnMotionLayout"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:id="@+id/toDOBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="To do List"
+        android:backgroundTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="@+id/hotelAPI"
+        app:layout_constraintStart_toStartOf="@+id/hotelAPI"
+        app:layout_constraintTop_toBottomOf="@+id/hotelAPI" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

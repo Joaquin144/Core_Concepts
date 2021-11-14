@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8B000000"
+
+    tools:context=".activities.ToDoListActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/todoAct_RV"
+        android:translationZ="5dp"
+        android:layout_marginBottom="24dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_marginBottom="12dp"
+        android:padding="4dp"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:translationZ="5dp"
+        android:textStyle="italic"
+        android:textColorHint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:hint="Add new Task to your list"
+        app:layout_constraintBottom_toTopOf="@+id/todoact_plusBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill,HardcodedText,TextFields" />
+
+    <ImageView
+        android:id="@+id/todoact_plusBtn"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/plus"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

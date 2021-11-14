@@ -8,15 +8,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.vibhu.nitJsr.viewpager.activities.ToDoListActivity;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button idBtnMotionLayout,apiBtn;
+    private Button idBtnMotionLayout,apiBtn,toDOBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         idBtnMotionLayout=findViewById(R.id.idBtnMotionLayout);
         apiBtn=findViewById(R.id.hotelAPI);
+        toDOBtn=findViewById(R.id.toDOBtn);
 
         int[] images = new int[8];
         images[0] = R.drawable.a1;
@@ -43,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,APIActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        toDOBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(MainActivity.this, ToDoListActivity.class);
                 startActivity(intent);
             }
         });
